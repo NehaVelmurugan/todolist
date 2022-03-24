@@ -1,0 +1,19 @@
+<h1 class="header"><u>String Interpliation</u></h1>
+<!-- String Interpliation -->
+<h3>Employee 1 Details:</h3>
+<p> Employye id : {{employee[0][0]}}</p><p> Name: {{employee[0][1]}}</p> <p>Company:{{employee[0][2]}}</p> 
+<hr>
+
+<h3>Employee 2 Details:</h3>
+<p> Employee id: {{employee[1][0]}}</p>
+<p> Name :{{employee[1][1]}} </p>
+<p>Comapny :{{employee[1][2]}} </p> 
+<hr>
+<button class="btn btn-outline-success" [disabled]="!getStatus" >Add products</button>
+<p [innerText]="getStatus"></p>
+
+
+<!-- Event Binding -->
+<input type="text" [(ngModel)]="enteredValue">
+
+<p>{{enteredValue}}</p>
