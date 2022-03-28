@@ -1,0 +1,25 @@
+<h1><u>one-way-binding works!</u></h1>
+
+<div class="stringInterpolation">
+  <h3><u>String Interpolation Binding</u></h3>
+  <p>{{"id : "+frd.id +", name : "+frd.name +", salary: "+frd.salary }}</p>
+</div>
+<div [ngClass]="className">
+  <h3><u>Property Binding</u></h3>
+  <button [disabled]="status ">click</button>
+</div>
+
+<div [class]="className1">
+  <h3><u>Attribute Binding</u></h3>
+  <input type="text" value="Enter your name" [attr.disabled]="status1 ? 'disabled': null">
+</div>
+
+<!-- <div [ngClass]="">
+    <h3><u></u></h3>
+</div> -->
+ 
+
+
+<div>
+    <button (click)="childData()">click</button>
+</div>
