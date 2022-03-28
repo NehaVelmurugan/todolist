@@ -1,3 +1,5 @@
 
 <!-- <app-product></app-product> -->
-<app-books></app-books>
+
+<h3>{{nameOfChild}}</h3>
+<app-one-way-binding (childName)="nameOfChild = $event"></app-one-way-binding>
