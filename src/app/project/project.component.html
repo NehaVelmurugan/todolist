@@ -1,0 +1,12 @@
+    <div class="container">
+        <ul *ngFor="let childList of navData">
+            <li><a href="#" (click)="childClickEvent(childList.message)">{{childList.name}}</a></li>
+
+
+            
+            <!-- <li><a href="#" (click)="firstChild()">{{parentData[0]}}</a></li>
+            <li><a href="#" (click)="secondChild()">{{parentData[1]}}</a></li>
+            <li><a href="#" (click)="thirdChild()">{{parentData[2]}}</a></li>
+            <li><a href="#" (click)="parentForth()">{{parentData[3]}}</a></li> -->
+        </ul>
+    </div>

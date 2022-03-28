@@ -1,5 +1,7 @@
+<h1><u>{{"UserName :" + name}}</u></h1>
+<app-project (navSelector)="navMessage = $event" [navData]="navList"></app-project>
+
 
 <!-- <app-product></app-product> -->
-
-<h3>{{nameOfChild}}</h3>
-<app-one-way-binding (childName)="nameOfChild = $event"></app-one-way-binding>
+<h3>{{navMessage}}</h3>
+<!-- <app-one-way-binding (childName)="nameOfChild = $event"></app-one-way-binding> -->

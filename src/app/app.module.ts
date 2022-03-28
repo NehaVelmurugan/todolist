@@ -5,12 +5,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { ProductComponent } from './product/product/product.component';
 import { OneWayBindingComponent } from './one-way-binding/one-way-binding.component';
+import { ProjectComponent } from './project/project.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductComponent,
-    OneWayBindingComponent
+    OneWayBindingComponent,
+    ProjectComponent
   ],
   imports: [
     BrowserModule,
