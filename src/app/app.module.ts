@@ -7,6 +7,9 @@ import { ProductComponent } from './product/product/product.component';
 import { OneWayBindingComponent } from './one-way-binding/one-way-binding.component';
 import { ProjectComponent } from './project/project.component';
 import { PipesComponent } from './pipes/pipes.component';
+import { CustomPipeComponent } from './pipes/custom-pipe/custom-pipe.component';
+import { EmployeeTitlePipes } from './pipes/custom-pipe/employeeTitle.pipe';
+
 
 @NgModule({
   declarations: [
@@ -14,7 +17,9 @@ import { PipesComponent } from './pipes/pipes.component';
     ProductComponent,
     OneWayBindingComponent,
     ProjectComponent,
-    PipesComponent
+    PipesComponent,
+    CustomPipeComponent,
+    EmployeeTitlePipes
   ],
   imports: [
     BrowserModule,

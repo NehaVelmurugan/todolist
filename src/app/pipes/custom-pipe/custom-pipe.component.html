@@ -1,0 +1,7 @@
+<table border="1">
+    <tr *ngFor="let employee of employees">
+        <td>{{employee.code}}</td>
+        <td>{{employee.name | employeeTitle:employee.gender}}</td>
+        <td>{{employee.gender}}</td>
+    </tr>
+</table>
