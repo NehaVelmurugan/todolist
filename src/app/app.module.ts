@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { ProductComponent } from './product/product/product.component';
 import { OneWayBindingComponent } from './one-way-binding/one-way-binding.component';
 import { ProjectComponent } from './project/project.component';
+import { PipesComponent } from './pipes/pipes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductComponent,
     OneWayBindingComponent,
-    ProjectComponent
+    ProjectComponent,
+    PipesComponent
   ],
   imports: [
     BrowserModule,

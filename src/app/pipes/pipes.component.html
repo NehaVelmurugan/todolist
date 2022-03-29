@@ -1,0 +1,52 @@
+<!--------String --------->
+<h1><u>String Format</u></h1>
+<h1>{{" Name : " + title }}</h1> <!-- Real Name -->
+<h2>{{" LowerCase : " + title | lowercase }}</h2> <!-- string is converted into lowerCase -->
+<h3>{{" upperCase : " + title | uppercase }}</h3> <!-- string is converted into upperCase -->
+<h4>{{" titleCase : " + title | titlecase }}</h4> <!-- string is converted into titleCase -->
+<h5>{{" startFrom : " + title | slice:2 }}</h5> <!-- string is selected from and to where to where.. -->
+<h1>{{" Json Format : " + (personalDetails | json) }}</h1> <!--- It is used to convert object into Json Format... -->
+<hr>
+
+
+<!---------Number------------>
+<h1><u>Number Format</u></h1>
+<h2>{{ 5.678 | number : '1.2-3'}}</h2>
+<h2>{{ 5.678 | number : '2.3-4'}}</h2>
+<h2>{{ 5.678 | number : '2.4-5'}}</h2>
+<h2>{{ 5.678 | number : '2.1-2'}}</h2>
+<hr>
+
+
+<!--------Percentage---------->
+<h1><u>Percentage Format</u></h1>
+<h1>{{0.25 | percent}}</h1><!--------It is used to convert into percentage---------->
+<hr>
+
+
+<!--------Currency-------->
+<h1><u>Currency Format</u></h1>
+<h1>{{25 | currency}}</h1><!---- It is used to display prices for product in Us---->
+<h1>{{25 | currency : 'GBP'}}</h1><!--GBP : Great Britain Pounds -->
+<h1>{{.25 | currency : 'EUR'}}</h1>
+<h1>{{100000000 | currency : 'INR'}}</h1>
+<hr>
+
+
+<!------ Date ------>
+<h1><u>Date Format</u></h1>
+    <!-- short Format -->
+    <h3>{{date}}</h3>
+    <h3>{{date | date : 'short'}}</h3>
+    <h3>{{date | date : 'shortDate'}}</h3>
+    <h3>{{date | date : 'shortTime'}}</h3>
+    <hr>
+    <!-- Medium Format -->
+    <h3>{{date | date : 'medium'}}</h3>
+    <h3>{{date | date : 'mediumDate'}}</h3>
+    <h3>{{date | date : 'mediumTime'}}</h3>
+    <hr>
+    <!-- Long Format -->
+    <h3>{{date | date: 'long'}}</h3>
+    <h3>{{date | date: 'longDate'}}</h3>
+    <h3>{{date | date : 'longTime'}}</h3>
