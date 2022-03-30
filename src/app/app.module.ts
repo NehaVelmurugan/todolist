@@ -11,7 +11,10 @@ import { EmployeeTitlePipes } from './pipes/custom-pipe/employeeTitle.pipe';
 import { StudentService } from './student.service';
 import { StudentListComponent } from './student-list/student-list.component';
 import { StudentDetailsComponent } from './student-details/student-details.component';
-
+import { EmployeeDetailsComponent } from './Dependency_Injection/employee-details/employee-details.component';
+import { EmployeeListComponent } from './Dependency_Injection/employee-list/employee-list.component';
+import { EmployeeServiceService } from './Dependency_Injection/employee-service.service';
+import { HttpClientModule} from '@angular/common/http'
 
 
 @NgModule({
@@ -24,13 +27,16 @@ import { StudentDetailsComponent } from './student-details/student-details.compo
     CustomPipeComponent,
     EmployeeTitlePipes,
     StudentListComponent,
-    StudentDetailsComponent
+    StudentDetailsComponent,
+    EmployeeDetailsComponent,
+    EmployeeListComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [StudentService],
+  providers: [StudentService, EmployeeServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
