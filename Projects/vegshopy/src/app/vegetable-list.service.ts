@@ -16,10 +16,17 @@ export class VegetableListService {
   public dryFruitUrl = "/assets/Data/dryFruit.json"
   names: any;
 
-  
-  getVegetable():Observable<vegetableListFormat>{
-    return this.http.get<vegetableListFormat>(this.vegetableUrl);
+
+  getItems(url: string):Observable<vegetableListFormat>{
+    return this.http.get<vegetableListFormat>(url);
   }
+
+
+
+
+
+
+
   getFruit():Observable<vegetableListFormat>{
     return this.http.get<vegetableListFormat>(this.fruitUrl);
   }

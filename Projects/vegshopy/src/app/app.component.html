@@ -2,6 +2,7 @@
 <!-- <ul *ngFor="let navInput of navOutput">
   <li>{{navInput}}</li>
 </ul> -->
+:::{{vegetableLists | json}}
 <div *ngFor="let vegetable of vegetableLists" class="container">
   <ul>
     <li>{{"Name: "+vegetable.name}}</li>
