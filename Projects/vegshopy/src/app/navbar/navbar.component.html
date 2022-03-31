@@ -1,0 +1,5 @@
+<nav>
+    <ul *ngFor="let navItem of navData">
+        <li (click)="getNavItem(navItem.message)"><a href="#" >{{navItem.name}}</a></li>
+    </ul>
+</nav>
