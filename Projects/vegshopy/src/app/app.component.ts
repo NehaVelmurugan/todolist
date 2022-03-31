@@ -12,19 +12,20 @@ export class AppComponent implements OnInit{
 
   public vegetableLists:any;
   public navbarList =[
-    {"name" : "Vegetable", "message":"Vegetable"},
-    {"name" : "Fruit", "message":"Fruit"},
-    {"name" : "Bread", "message":"Bread"},
-    {"name" : "Dry Fruit", "message" :"DryFruit"}
+    {"name" : "Vegetable", "message":"Vegetable", url: "/assets/Data/vegetableList.json"},
+    {"name" : "Fruit", "message":"Fruit", url:"/assets/Data/fruitList.json"},
+    {"name" : "Bread", "message":"Bread", url:"/assets/Data/breadList.json"},
+    {"name" : "Dry Fruit", "message" :"DryFruit", url:"/assets/Data/dryFruit.json"}
   ];
 
-  activeTab(value:any){
+  activeTab(tab:any){
     // for(i=0; i<this.navbarList.length;i++)
-      this.vegServes.getVegetable()
+      this.vegServes.getItems(tab?.url)
       .subscribe((response: any) =>{
       this.vegetableLists =response;
     })
   }
+   
 
   
 
