@@ -23,3 +23,16 @@ button{
     border-radius: 5px;
     color: white;
 }
+.priceNav{
+    text-align: end;
+    margin-right: 50px;
+    margin-top: 10px;
+}
+a{
+    text-decoration: none;
+}
+#amount{
+    font-weight: bold;
+    font-size: 30px;
+    margin-right: 10px;
+}

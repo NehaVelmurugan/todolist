@@ -27,7 +27,9 @@ export class AppComponent implements OnInit{
   }
    
 
-  
+  setAmount(value:any){
+    this.amount = value + this.amount
+  }
 
   constructor(private vegServes:VegetableListService){}
 

@@ -2,11 +2,16 @@
 <!-- <ul *ngFor="let navInput of navOutput">
   <li>{{navInput}}</li>
 </ul> -->
-:::{{vegetableLists | json}}
 <div *ngFor="let vegetable of vegetableLists" class="container">
   <ul>
     <li>{{"Name: "+vegetable.name}}</li>
     <li>{{"Price: "+vegetable.price}}</li>
   </ul>
-  <button>Click</button>
+  <button (click)="setAmount(vegetable.price)">Click</button>
+</div>
+<div class="priceNav">
+  <ul>
+    <li><a href="#">price</a></li>
+    <li id="amount">{{amount}}</li>
+  </ul>
 </div>

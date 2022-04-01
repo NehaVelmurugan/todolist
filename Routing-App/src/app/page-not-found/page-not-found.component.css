@@ -1,0 +1,11 @@
+.error{
+    font-size: 90px;
+    font-weight: bolder;
+    color: rgb(138, 14, 14);
+}
+.notFound{
+    font-size: 100px;
+    font-weight: bolder;
+    font-style: italic;
+    color: red;
+}
