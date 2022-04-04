@@ -8,11 +8,11 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 export class NavbarComponent implements OnInit {
 
   @Input() public navData: any;
-  @Input () public navList:any;
-  @Output() navItem = new EventEmitter;
+  @Input () public navList:any;// change name 
+  @Output() navSelectorTab = new EventEmitter; // navItem
 
   getNavItem(event:Event){
-    this.navItem.emit(event);
+    this.navSelectorTab.emit(event); 
     console.log(event)
   }
   constructor() { }

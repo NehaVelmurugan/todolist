@@ -1,5 +1,7 @@
 [
-    {"name": "Mango", "price": 1000},
-    {"name": "Orange", "price":521},
-    {"name": "Grapes", "price":10}
+    {"name": "Mango", "price" : 1000},
+    {"name": "Orange", "price" : 521},
+    {"name": "Grapes", "price" : 10},
+    {"name":"water melon", "price" : 523}
+
 ]

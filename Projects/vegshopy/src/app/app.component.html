@@ -1,4 +1,4 @@
-<app-navbar (navItem)="activeTab($event)" [navData]="navbarList"></app-navbar>
+<app-navbar (navSelectorTab)="activeTab($event)" [navData]="navbarList"></app-navbar>
 <!-- <ul *ngFor="let navInput of navOutput">
   <li>{{navInput}}</li>
 </ul> -->
@@ -9,9 +9,9 @@
   </ul>
   <button (click)="setAmount(vegetable.price)">Click</button>
 </div>
-<div class="priceNav">
+<div class="priceOfProduct">
   <ul>
-    <li><a href="#">price</a></li>
+    <li>price</li>
     <li id="amount">{{amount}}</li>
   </ul>
 </div>

@@ -1,5 +1,7 @@
 [
-    {"name": "Onion", "price" : 1000},
-    {"name" : "Green chilli", "price" : 99 },
-    {"name" : "potato", "price": 2176}
+    {"name" : "Onion", "price" : 1000000},
+    {"name" : "Green chilli", "price" : 9900 },
+    {"name" : "potato", "price": 2176},
+    {"name" : "ladies Finger", "price" : 621536},
+    {"name" : "tomato", "price" : 5655658854745}
 ]
