@@ -21,12 +21,6 @@ export class VegetableListService {
     return this.http.get<vegetableListFormat>(url);
   }
 
-
-
-
-
-
-
   getFruit():Observable<vegetableListFormat>{
     return this.http.get<vegetableListFormat>(this.fruitUrl);
   }
@@ -36,6 +30,8 @@ export class VegetableListService {
   getDryFruit():Observable<vegetableListFormat>{
     return this.http.get<vegetableListFormat>(this.dryFruitUrl);
   }
+  
+
   
   constructor(private http: HttpClient) { }
 }

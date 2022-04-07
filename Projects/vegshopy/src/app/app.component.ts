@@ -1,3 +1,4 @@
+import { LocalResolver } from '@angular/compiler/src/compiler_util/expression_converter';
 import { Component, OnInit } from '@angular/core';
 import { VegetableListService } from './vegetable-list.service';
 
@@ -8,8 +9,7 @@ import { VegetableListService } from './vegetable-list.service';
 })
 export class AppComponent implements OnInit{
   title = 'vegShopeey';
-  amount = 0;
-
+  public amount  = 0;
   public vegetableLists:any;
   public navbarList =[
     {"name" : "Vegetable", "message":"Vegetable", url: "/assets/Data/vegetableList.json"},
@@ -25,10 +25,11 @@ export class AppComponent implements OnInit{
       this.vegetableLists =response;
     })
   }
-   
 
-  setAmount(value:any){
-    this.amount = value + this.amount
+  setAmount(value:number){
+    this.amount = value + this.amount;
+    localStorage.setItem('amount', this.amount.toString());
+    const testValue = localStorage.getItem('amount');
   }
 
   constructor(private vegServes:VegetableListService){}
@@ -38,6 +39,7 @@ export class AppComponent implements OnInit{
     // .subscribe((response) =>{
     //     this.vegetableLists = response;
     // })
+    
   }
 }
 
