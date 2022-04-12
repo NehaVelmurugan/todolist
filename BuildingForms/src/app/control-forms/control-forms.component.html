@@ -1,0 +1,101 @@
+<div class="container">
+  <h1>User Register</h1>
+  <form  #Login = "ngForm" (ngSubmit)="submit(Login)" class="form-inline">
+    <div class="form-group">
+      <label for="firstName">FirstName</label>
+      
+      <input 
+      type="text" 
+      #firstName="ngModel" 
+      name="firstName" 
+      minlength="2" 
+      maxlength="20" 
+      class="form-control"
+        required ngModel>
+      <!-- single Alert     -->
+      
+      <div *ngIf="firstName.touched && firstName.errors" 
+      class="alert alert-danger" role="alert">
+
+        <div *ngIf="firstName.errors?.['required']">
+            This field is Required
+        </div>
+        <p *ngIf="firstName.errors?.['minlength']">
+            It required Minimum
+          {{firstName.errors?.['minlength'].requiredLength}} characters
+        </p>
+      </div>
+    </div>
+    <pre></pre>
+    
+    <div class="form-group">
+      <label for="lastName">LastName</label>
+      <input 
+      type="text" 
+      #lastName = "ngModel"
+      name="lastName" 
+      class="form-control " 
+      ngModel required>
+      <div *ngIf="lastName.touched && lastName.errors" 
+      class="alert alert-danger" role="alert">
+
+        <div *ngIf="lastName.errors?.['required']">
+            This field is Required
+        </div>
+        <p *ngIf="lastName.errors?.['minlength']">
+            It required Minimum
+          {{lastName.errors?.['minlength'].requiredLength}} characters
+        </p>
+      </div>
+    </div>
+    <pre></pre>
+
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input 
+      type="text" 
+      name="email" 
+      class="form-control" 
+      ngModel required>
+    </div>
+    <pre></pre>
+
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input 
+      type="password" 
+      name="password" 
+      class="form-control" 
+      ngModel required>
+    </div>
+    <pre></pre>
+
+    <button class="btn btn-primary mb-2" type="submit">Submit</button>
+  </form>
+</div>
+<!-- {{Login | json}} -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<app-contact-form></app-contact-form>

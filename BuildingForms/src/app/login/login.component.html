@@ -1,0 +1,49 @@
+<h2>Login Page</h2>
+<form #userForm="ngForm">
+
+    {{userForm.value | json}}
+
+    <div class="form-group">
+        <label class="form-name">UserName</label>
+        
+        <input 
+        type="text" 
+        class="form-control"
+        name="userName" 
+        #userName="ngModel"
+        placeholder="UserName" 
+        minlength="2"
+        maxlength="30"
+        [class.is-invalid]="userName.invalid && userName.touched"
+        [class.is-valid]="userName.valid && userName.touched"
+        required ngModel/>
+    </div>
+
+    <div class="text-danger" [class.d-none]="userName.valid || userName.untouched">
+        <small *ngIf="userName.errors?.['required']">Invalid UserName</small>
+        <small *ngIf="userName.errors?.['minlength']">Minimum 2 characters </small>
+        <small *ngIf="userName.errors?.['maxlength']">It must me 30 Characters</small>
+    </div>
+
+    <div class="form-group">
+        <label class="form-name">Password</label>
+        
+        <input 
+        type="password" 
+        class="form-control" 
+        name="password" 
+        [class.is-invalid]="password.invalid && password.touched"
+        [class.is-valid]="password.valid && password.touched"
+        #password="ngModel"
+        placeholder="password" 
+        required ngModel/>
+
+    </div><div class="text-danger" [class.d-none]="password.valid || password.untouched">
+        <small *ngIf="password.errors?.['required']">Invalid UserName</small>
+        <small *ngIf="password.errors?.['minlength']">Minimum 2 characters </small>
+        <small *ngIf="password.errors?.['maxlength']">It must me 30 Characters</small>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">LogIn</button>
+</form>
+<hr>
