@@ -9,6 +9,8 @@ import { TemplateDrivenFormsComponent } from './template-driven-forms/template-d
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { RegisterComponent } from './register/register.component';
     TemplateDrivenFormsComponent,
     ReactiveFormsComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ReactiveFormComponent,
   ],
   imports: [
     BrowserModule,

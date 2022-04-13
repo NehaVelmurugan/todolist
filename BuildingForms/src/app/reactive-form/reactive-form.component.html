@@ -1,0 +1,29 @@
+<div class="container-fluid">
+    <form #form="ngForm" [formGroup]="loginForm" (ngSubmit)="login(form.value)">
+        <div class="form-group">
+            <label class="form-title">User Name</label>
+            <input 
+            type="text" 
+            class="form-control"
+            minlength="2"
+            [class.is-invalid]="userName?.invalid && userName?.touched"
+            [class.is-valid]="userName?.valid && userName?.touched"
+            formControlName="userName" />
+            <div class="text-danger" [class.d-none]="userName?.valid || userName?.untouched">
+                <small *ngIf="userName?.errors?.['required']">UserName Required</small>
+                <small *ngIf="userName.errors?.['minlength']">Minimum 2 characters </small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-title">Password</label>
+
+            <input 
+            type="password" 
+            class="form-control" 
+            formControlName="password" />
+        </div>
+
+        <button type="submit" class="btn btn-outline-primary">LogIn</button>
+    </form>
+</div>
