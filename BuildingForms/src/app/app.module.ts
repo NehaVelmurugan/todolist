@@ -8,8 +8,10 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
 import { TemplateDrivenFormsComponent } from './template-driven-forms/template-driven-forms.component';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
+
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { LoginFormComponent } from './login-form/login-form.component';
+import { ReactiveFormProgramComponent } from './reactive-form-program/reactive-form-program.component';
 
 
 @NgModule({
@@ -20,8 +22,9 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
     TemplateDrivenFormsComponent,
     ReactiveFormsComponent,
     LoginComponent,
-    RegisterComponent,
     ReactiveFormComponent,
+    LoginFormComponent,
+    ReactiveFormProgramComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 // import { FormControl, FormGroup } from '@angular/forms';
 import { FormBuilder, Validators } from '@angular/forms';
+import { passwordValidator } from './password.validator';
+
 
 @Component({
   selector: 'app-reactive-form',
@@ -20,8 +22,9 @@ export class ReactiveFormComponent implements OnInit {
 
   loginForm = this.fb.group({
     userName : ['',Validators.required],
-    password : ['',Validators.required]
-  })
+    password : ['',Validators.required],
+    confirmPassword :['', Validators.required]
+  }, {validator:passwordValidator})
 
   get userName():any{
     return this.loginForm.get('userName')

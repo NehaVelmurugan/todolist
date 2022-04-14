@@ -1,0 +1,53 @@
+<div class="caontainer-fluid">
+    <form [formGroup]="loginForm">
+        
+        <div class="form-group">
+            <label class="form-title">UserName</label>
+            <input 
+            type="text" 
+            class="form-control" 
+            formControlName="userName" />
+        </div>
+        
+        <div class="form-group">
+            <label class="form-title">Choice</label><br>
+            <input type="radio" 
+            name="choice"
+            value="yes"
+            class="custom-contol-input"
+            formControlName="choice"/>yes
+            
+            <input 
+            type="radio" 
+            name="choice" 
+            value="no"
+            formControlName="choice"/>No
+        </div>
+        <ng-container *ngIf="loginForm.get('choice')?.value === 'yes' ">
+            <div class="choice"> 
+                <div class="form-group">
+                    <label class="form-title">
+                        Priority
+                    </label>
+                    
+                    <select 
+                    class="form-control" 
+                    formControlName="priority">
+                        <option *ngFor="let option of optionsValue" [ngValue]="option">{{option.key}}</option>
+                    </select>
+                </div>
+                
+                <div class="form-group" >
+                    <label class="form-title">
+                        Task
+                    </label>
+                    
+                    <select class="form-control">
+                        <option [value]="option" *ngFor ="let option of changingValue?.value">{{option}}</option>
+
+                    </select>
+                </div>
+            </div>
+        </ng-container>
+    </form>
+</div>

@@ -28,12 +28,7 @@
             id="cpassword" 
             class="form-control" />
         </div>
-
-        <button 
-        type="submit" 
-        class="btn btn-primary">
-            Register
-        </button>
+        <button class="btn btn-primary" type="submit" (click)="onSubmit()">Submit</button>
     </form>
     {{registrationForm.value|json}}
 </div>

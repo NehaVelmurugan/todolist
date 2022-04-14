@@ -16,7 +16,14 @@ export class ReactiveFormsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.registrationForm);
+      console.log(this.registrationForm.value);
+      this.registrationForm.get('userName')?.valueChanges.subscribe((value)=>{
+        console.log(value);     
+      })
   }
-
+  onSubmit(){
+    console.log(this.registrationForm.value)
+  }
 }
+//“Same Origin Policy
+// plethora 
