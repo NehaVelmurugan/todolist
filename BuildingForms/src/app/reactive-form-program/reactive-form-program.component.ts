@@ -9,12 +9,13 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 export class ReactiveFormProgramComponent implements OnInit {
 
   public changingValue:any;
-  public options =["High", "Medium", "Low"]
-  public optionsValue = [
+  public options= [
    {key : "High", value : ["HighTemp", "HighPre", "HighValue"]},
    {key : "Medium", value: ["MediumTemp", "MediumPre", "MediumValue"]},
    {key : "Low", value: ["LowTemp", "LowPre", "LowValue"]},
   ]
+
+  public userPattern ="[a-zA-Z]{0,30}"
 
   constructor(private fb:FormBuilder) { }
   ngOnInit(): void {
@@ -25,9 +26,9 @@ export class ReactiveFormProgramComponent implements OnInit {
   }
 
   loginForm = this.fb.group({
-    userName : ['',Validators.required],
+    userName : ['',[Validators.required, Validators.pattern(this.userPattern)]],
     choice : ['', Validators.required],
-    priority :['', Validators.required]
+    priority :['', Validators.required],
+    task :['',Validators.required]
   })
-
 }

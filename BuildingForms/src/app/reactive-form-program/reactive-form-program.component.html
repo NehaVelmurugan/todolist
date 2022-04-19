@@ -8,7 +8,10 @@
             class="form-control" 
             formControlName="userName" />
         </div>
-        
+        <div [class.d-none]="loginForm.get('userName')?.valid || loginForm.get('userName')?.untouched">
+        <small class="text-danger" *ngIf="loginForm.get('userName')?.errors?.['pattern']">Enter Only Character</small>
+        </div>
+
         <div class="form-group">
             <label class="form-title">Choice</label><br>
             <input type="radio" 
@@ -33,21 +36,24 @@
                     <select 
                     class="form-control" 
                     formControlName="priority">
-                        <option *ngFor="let option of optionsValue" [ngValue]="option">{{option.key}}</option>
+                        <option *ngFor="let option of options" [ngValue]="option">{{option.key}}</option>
                     </select>
                 </div>
                 
-                <div class="form-group" >
+                <ng-container class="form-group" *ngIf="loginForm.get('priority')?.['valid']">
                     <label class="form-title">
                         Task
                     </label>
                     
-                    <select class="form-control">
+                    <select class="form-control" formControlName="task">
                         <option [value]="option" *ngFor ="let option of changingValue?.value">{{option}}</option>
 
                     </select>
-                </div>
+                </ng-container>
             </div>
+        </ng-container>
+        <ng-container *ngIf="loginForm.get('task')?.valid && loginForm.get('userName')?.valid"> 
+            <button type="submit" class="btn btn-primary">submit</button>
         </ng-container>
     </form>
 </div>

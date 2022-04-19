@@ -31,7 +31,7 @@ export class VegetableListService {
     return this.http.get<vegetableListFormat>(this.dryFruitUrl);
   }
   
-
   
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+   }
 }
