@@ -29,7 +29,6 @@ export class AppComponent implements OnInit{
   setAmount(value:number){
     this.amount = value + this.amount;
     localStorage.setItem('amount', this.amount.toString());
-    const testValue = localStorage.getItem('amount');
   }
 
   constructor(private vegServes:VegetableListService){}

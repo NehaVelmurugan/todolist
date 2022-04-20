@@ -8,6 +8,9 @@ import { PromiseComponent } from './Components/promise/promise.component';
 import { ObservableComponent } from './Components/Observables/observable/observable.component';
 import { ListComponent } from './Components/Observables/observableChildComponents/list/list.component';
 import { FormEventComponent } from './Components/Observables/observableChildComponents/form-event/form-event.component';
+import { OfFromComponent } from './Components/Observables/observableChildComponents/of-from/of-from.component';
+
+
 
 @NgModule({
   declarations: [
@@ -16,7 +19,8 @@ import { FormEventComponent } from './Components/Observables/observableChildComp
     PromiseComponent,
     ObservableComponent,
     ListComponent,
-    FormEventComponent
+    FormEventComponent,
+    OfFromComponent,
   ],
   imports: [
     BrowserModule,
