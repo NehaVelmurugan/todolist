@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
+
 import { Observable } from 'rxjs';
 import { decrement, increment, reset } from 'src/app/Reducer/Action/counter.action';
 
@@ -19,6 +20,7 @@ import { decrement, increment, reset } from 'src/app/Reducer/Action/counter.acti
 export class MyCounterComponent implements OnInit {
 
   count$ : Observable<number> | any;
+  
   constructor(private store:Store<{count:number}>) {
     // TODO: Connect 'this.count$' stream to current store 'count' state.
     this.count$ =this.store.select('count');

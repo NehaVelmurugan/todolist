@@ -8,7 +8,13 @@ import { CounterComponent } from './UsingEmitter/counter/counter.component';
 import { CounterButtonComponent } from './UsingEmitter/counter-button/counter-button.component';
 import { CounterOutputComponent } from './UsingEmitter/counter-output/counter-output.component';
 // import { counterReducer } from './UsingNGRX/counter.reducer';
-import { CountersComponent } from './UsingNGRX/counters.component';
+
+import { FormsModule } from '@angular/forms';
+import { NgrxCounterComponent } from './Using NgRX/ngrx-counter/ngrx-counter.component';
+import { NgrxCounterButtonComponent } from './Using NgRX/ngrx-counter-button/ngrx-counter-button.component';
+import { NgrxCounterOutputComponent } from './Using NgRX/ngrx-counter-output/ngrx-counter-output.component';
+import { counterReducer } from './Using NgRX/State/ngrx-counter.reducer';
+import { NgrxCounterInputComponent } from './Using NgRX/ngrx-counter-input/ngrx-counter-input.component';
 
 
 @NgModule({
@@ -18,11 +24,15 @@ import { CountersComponent } from './UsingNGRX/counters.component';
     CounterComponent,
     CounterButtonComponent,
     CounterOutputComponent,
-    CountersComponent
+    NgrxCounterComponent,
+    NgrxCounterButtonComponent,
+    NgrxCounterOutputComponent,
+    NgrxCounterInputComponent,
   ],
   imports: [
     BrowserModule,
-    StoreModule.forRoot({count:counterReduces, /*counter:counterReducer*/}),
+    FormsModule,
+    StoreModule.forRoot({/* counter:counterReduces */ counter:counterReducer}),
     
   ],
   providers: [],

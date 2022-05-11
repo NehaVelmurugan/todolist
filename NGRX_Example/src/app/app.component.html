@@ -1,0 +1,13 @@
+<div>
+  <input [(ngModel)]="dataId" placeholder="enter id & click the button...">
+</div>
+<div>
+  <br/>
+  <button (click)="getData()">Get counter Data </button>
+  <button (click)="getError()">Get Counter Error </button>
+</div>
+<div [ngClass]="isError === null ? 'initial-text' : isError ? 'error-text' : 'valid-text'">
+<div>count: {{(json.stringify(this.count$ | async))}} </div>
+<div>Data: {{(json.stringify(this.data$ | async))}} </div>
+<div>Error: {{(json.stringify(this.error$ | async))}} </div>
+</div>
