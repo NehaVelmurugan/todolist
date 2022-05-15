@@ -1,0 +1,35 @@
+<!-- <div class="container-fluid my-3">
+  <div class="form-control">
+    <label for="Add_Edit" class="text-success">ADD / Edit</label>
+    <input type="text" class="form-control" id="Add_Edit" #task>
+    <button class="btn btn-primary my-3" (click)="addTodoList(task.value)">Save</button>
+    <button class="btn btn-danger mx-3">cancel</button>
+  </div>
+  <ul *ngFor="let todoList of todoLists">
+    <input type="checkbox" name="listItem" id="listItem">&nbsp;<label>{{todoList.name}}</label>
+    <div>
+      <button class="btn btn-danger" (click)="deleteTodoItem(todoList.id)">Remove</button>
+    </div>
+  </ul>
+</div> -->
+
+<form >
+  <div class="container my-3">
+    <div class="form-control">
+      <label for="Add_Edit" class="text-success">Add / Edit</label>
+      <input type="text" name="listItem" id="Add_Edit" class="form-control" [(ngModel)]="listItem">
+      <button class="btn btn-primary my-3" (click)="addTodoList()">Save</button>
+    </div>
+    <ng-container *ngIf="(todoLists$ | async)?.length">
+
+    <ul *ngFor="let todoList of (todoLists$ | async)">
+      <input type="checkbox" name="listItem" id="listItem">&nbsp;<label>{{todoList.task}}</label>
+      <div>
+        <button class="btn btn-success" (click)="deleteTodoItem()">Remove</button>
+        <button class="btn btn-danger mx-3" (click)="editTodoItem()">Edit</button>
+      </div>
+    </ul>
+    
+  </ng-container>
+  </div>
+</form>

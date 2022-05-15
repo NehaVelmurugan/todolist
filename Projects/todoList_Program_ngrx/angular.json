@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Todo_list_Program_NGRX": {
+    "todoList_Program_ngrx": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -27,7 +27,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": []
           },
@@ -68,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Todo_list_Program_NGRX:build:production"
+              "browserTarget": "todoList_Program_ngrx:build:production"
             },
             "development": {
-              "browserTarget": "Todo_list_Program_NGRX:build:development"
+              "browserTarget": "todoList_Program_ngrx:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Todo_list_Program_NGRX:build"
+            "browserTarget": "todoList_Program_ngrx:build"
           }
         },
         "test": {
@@ -102,5 +103,5 @@
       }
     }
   },
-  "defaultProject": "Todo_list_Program_NGRX"
+  "defaultProject": "todoList_Program_ngrx"
 }
