@@ -5,7 +5,9 @@ import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { FormsModule } from '@angular/forms';
 import { TodoListReducer } from './State/reducer';
-// import { todoState } from './State';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreEffect } from './State/effects';
+import { AppService } from './State/Services';
 
 @NgModule({
   declarations: [
@@ -15,9 +17,10 @@ import { TodoListReducer } from './State/reducer';
     BrowserModule,
     FormsModule,
     StoreModule.forRoot({
-      rootState: TodoListReducer}, {})
+      rootState: TodoListReducer}),
+    EffectsModule.forRoot([StoreEffect])
   ],
-  providers: [],
+  providers: [AppService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

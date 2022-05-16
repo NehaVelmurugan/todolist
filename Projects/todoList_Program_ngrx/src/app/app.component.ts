@@ -1,8 +1,9 @@
+import { error } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { TodoItem } from './interfaces/interface';
-import { addTodoList, deleteTodoList,editTodoList } from './State/action';
+import { addTodoList, addTodoListSuccess, deleteTodoList,deleteTodoListError,editTodoList } from './State/action';
 import { TodoListState } from './State/reducer';
 import { todoItemSelector } from './State/selector';
 
@@ -15,31 +16,37 @@ export class AppComponent implements OnInit {
   title = 'todoList_Program_ngrx';
   listItem:any;
   todoLists$ = this.store.select(todoItemSelector);
-  todoListItems:any; 
+  // conformation = confirm("Are you sure, You want to delete");
   constructor(private store:Store<{rootState: TodoListState}>){
   }
 
   ngOnInit(): void {
-    this.todoLists$.subscribe(x =>{
-    //  this.todoListItems=x.listItem; 
-      console.log(x);
-    }
-    )
+    this.todoLists$.subscribe(x =>(x))
   }
 
 addTodoList(){
-  this.todoListItems=this.store.dispatch(addTodoList({item: this.listItem} ));
+  this.store.dispatch(addTodoList({item: this.listItem} ));
 };
 
-deleteTodoItem(){
-  this.store.dispatch(deleteTodoList({id: this.listItem.id}))
+deleteTodoItem(id: number){
+  debugger;
+   let conformation = confirm("Are you sure, You want to delete");
+   if(conformation == true){
+    this.store.dispatch(deleteTodoList({id: id, pop:conformation }));
+  }
+  else{
+    this.store.dispatch(deleteTodoListError({error:Error, pop:conformation}))
+  }
 }
-editTodoItem(){
-  this.store.dispatch(editTodoList({
-    item: this.listItem,
-    id: this.listItem.id
-  }))
-}
+
+
+
+// editTodoItem(){
+//   this.store.dispatch(editTodoList({
+//     item: this.listItem,
+//     id: this.listItem.id
+//   }))
+// }
 
 
 

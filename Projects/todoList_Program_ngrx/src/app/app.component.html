@@ -25,8 +25,8 @@
     <ul *ngFor="let todoList of (todoLists$ | async)">
       <input type="checkbox" name="listItem" id="listItem">&nbsp;<label>{{todoList.task}}</label>
       <div>
-        <button class="btn btn-success" (click)="deleteTodoItem()">Remove</button>
-        <button class="btn btn-danger mx-3" (click)="editTodoItem()">Edit</button>
+        <button class="btn btn-danger" (click)="deleteTodoItem(todoList.id)">Delete</button>
+        <!-- <button class="btn btn-danger mx-3" (click)="editTodoItem()">Edit</button> -->
       </div>
     </ul>
     
